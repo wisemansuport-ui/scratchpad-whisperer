@@ -1,16 +1,64 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect, useRef } from "react";
+import ScarcityBar from "@/components/ScarcityBar";
+import HeroSection from "@/components/HeroSection";
+import PunchList from "@/components/PunchList";
+import ActionArea from "@/components/ActionArea";
+import ProofGrid from "@/components/ProofGrid";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const revealRefs = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const addRevealRef = (el: HTMLDivElement | null) => {
+    if (el && !revealRefs.current.includes(el)) {
+      revealRefs.current.push(el);
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <>
+      <ScarcityBar />
+      <div className="max-w-[750px] mx-auto px-5 py-12">
+        <div ref={addRevealRef} className="reveal">
+          <HeroSection />
+        </div>
+
+        <div ref={addRevealRef} className="reveal">
+          <PunchList />
+        </div>
+
+        <div ref={addRevealRef} className="reveal">
+          <ActionArea />
+        </div>
+
+        <div ref={addRevealRef} className="reveal">
+          <ProofGrid />
+        </div>
+
+        <footer className="mt-12 text-center text-[10px] text-muted-foreground/50">
+          Aviso Espiritual: Os resultados variam baseados na tua dedicação psíquica e na intensidade das energias envolvidas no teu caso específico. Tratamento Espiritual e Consultoria. © 2026.
+        </footer>
+      </div>
+    </>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
