@@ -78,3 +78,14 @@ All colors MUST be HSL.
 .animate-pulse-green {
   animation: pulse-green 2s infinite;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
