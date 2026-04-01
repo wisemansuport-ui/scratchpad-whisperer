@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import PunchList from "@/components/PunchList";
 import ActionArea from "@/components/ActionArea";
 import ProofGrid from "@/components/ProofGrid";
+import FAQSection from "@/components/FAQSection";
 
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
