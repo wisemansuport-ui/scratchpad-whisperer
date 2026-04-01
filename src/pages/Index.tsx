@@ -54,6 +54,10 @@ const Index = () => {
           <ProofGrid />
         </div>
 
+        <div ref={addRevealRef} className="reveal">
+          <FAQSection />
+        </div>
+
         <footer className="mt-12 text-center text-[10px] text-muted-foreground/50">
           Aviso Espiritual: Os resultados variam baseados na tua dedicação psíquica e na intensidade das energias envolvidas no teu caso específico. Tratamento Espiritual e Consultoria. © 2026.
         </footer>
