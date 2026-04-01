@@ -101,5 +101,19 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(circle at 50% 0%, hsl(280 40% 10%) 0%, hsl(var(--background)) 70%);
+    min-height: 100vh;
   }
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 hsl(var(--whatsapp) / 0.6); }
+  70% { box-shadow: 0 0 0 15px hsl(var(--whatsapp) / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--whatsapp) / 0); }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s infinite;
 }
