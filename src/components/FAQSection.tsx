@@ -33,7 +33,7 @@ const faqs = [
 ];
 
 const FAQSection = () => (
-  <section className="mb-12">
+  <section className="mt-16 mb-12">
     <h2 className="text-2xl md:text-3xl font-cinzel text-center text-gold mb-6">
       Perguntas Frequentes
     </h2>
