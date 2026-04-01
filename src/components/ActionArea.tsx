@@ -1,4 +1,5 @@
 import WhatsAppButton from "./WhatsAppButton";
+import RitualCarousel from "./RitualCarousel";
 
 const ActionArea = () => (
   <div className="text-center bg-[radial-gradient(circle,hsl(280_30%_5%)_0%,hsl(var(--background))_100%)] p-10 border border-border rounded">
@@ -6,6 +7,8 @@ const ActionArea = () => (
       É hora de trazer o teu amor de volta para as tuas mãos.{" "}
       <span className="text-gold">Sem sofrimento. Sem humilhações.</span>
     </p>
+
+    <RitualCarousel />
 
     <WhatsAppButton />
 
