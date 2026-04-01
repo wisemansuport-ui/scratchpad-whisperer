@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import PunchList from "@/components/PunchList";
 import ActionArea from "@/components/ActionArea";
 import ProofGrid from "@/components/ProofGrid";
+import FAQSection from "@/components/FAQSection";
 
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
@@ -51,6 +52,10 @@ const Index = () => {
 
         <div ref={addRevealRef} className="reveal">
           <ProofGrid />
+        </div>
+
+        <div ref={addRevealRef} className="reveal">
+          <FAQSection />
         </div>
 
         <footer className="mt-12 text-center text-[10px] text-muted-foreground/50">
