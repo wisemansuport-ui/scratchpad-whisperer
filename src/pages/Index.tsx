@@ -6,7 +6,7 @@ import PunchList from "@/components/PunchList";
 import ActionArea from "@/components/ActionArea";
 import ProofGrid from "@/components/ProofGrid";
 import FAQSection from "@/components/FAQSection";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import QuizQualificacao from "@/components/QuizQualificacao";
 import CookieBanner from "@/components/CookieBanner";
@@ -92,8 +92,7 @@ const Index = () => {
         </footer>
       </div>
 
-      {/* Ponto 8: Botão flutuante móvel */}
-      <FloatingWhatsApp />
+
 
       {/* Ponto 7: Exit-intent popup */}
       <ExitIntentPopup />
