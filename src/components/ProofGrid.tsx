@@ -72,7 +72,7 @@ const ProofGrid = () => (
       O Que Dizem Quem Já Recuperou o Amor
     </h2>
     <p className="text-center text-muted-foreground text-sm mb-6">
-      ★★★★★ Avaliação média de 4.9 com base em +820 consultas
+      Avaliação média de 4.9 com base em +820 consultas
     </p>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
