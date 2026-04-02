@@ -11,8 +11,8 @@ const ActionArea = () => {
   return (
     <div className="text-center bg-[radial-gradient(circle,hsl(280_30%_5%)_0%,hsl(var(--background))_100%)] p-10 border border-border rounded">
       <p className="text-xl md:text-2xl font-cinzel mb-8 text-foreground">
-        O Protocolo de Inversão Magnética está pronto para ser ativado.{" "}
-        <span className="text-gold">Ele(a) vai correr atrás. Não tu.</span>
+        A Verdade Está Prestes a Vir à Tona.{" "}
+        <span className="text-gold">Assume o Controlo e Traz Quem Amas de Volta.</span>
       </p>
 
       <RitualCarousel />

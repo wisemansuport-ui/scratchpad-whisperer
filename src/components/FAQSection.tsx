@@ -7,28 +7,28 @@ import {
 
 const faqs = [
   {
-    q: "O trabalho espiritual realmente funciona?",
-    a: "Sim. São rituais ancestrais praticados há séculos com resultados comprovados. A Guia Maria Helena trabalha com entidades de alta força e cada caso é tratado de forma individual e personalizada.",
+    q: "O trabalho espiritual realmente funciona nestes casos?",
+    a: "Sim. São rituais ancestrais focados em quebrar vínculos nocivos. A Guia Maria Helena deteta interferências de terceiros e aplica o bloqueio mental com eficiência e rapidez.",
   },
   {
-    q: "Em quanto tempo verei resultados?",
-    a: "Os primeiros sinais costumam surgir entre 24 a 72 horas após o ritual ser firmado. Mensagens inesperadas, sonhos, saudade repentina — são os primeiros movimentos energéticos.",
+    q: "A pessoa amada vai saber que a mandei vigiar e intervir?",
+    a: "Jamais. O sigilo é absoluto. A pessoa sentirá uma repulsa natural pelas interferências (amantes/más companhias) e uma vontade irresistível de voltar para ti, sem nunca desconfiar.",
   },
   {
-    q: "A pessoa amada vai saber que fiz um trabalho?",
-    a: "Jamais. O sigilo é absoluto. A pessoa sentirá uma vontade natural e irresistível de voltar, sem nunca desconfiar de qualquer intervenção espiritual.",
+    q: "Em quanto tempo verei a verdade e os resultados?",
+    a: "A revelação e a quebra de laços iniciam-se logo após a consulta inicial. Sinais físicos como mensagens inesperadas, e afastamento das companhias indesejadas surgem entre 24 a 72h.",
   },
   {
     q: "Funciona mesmo à distância?",
-    a: "A energia espiritual não conhece barreiras físicas. Trabalhamos com pessoas em todo o mundo — Portugal, Brasil, Angola, Moçambique — com a mesma eficácia.",
+    a: "A energia espiritual de manipulação não conhece barreiras físicas. Rastreamos bloqueios e isolamos a pessoa amada em qualquer parte do mundo — Portugal, Brasil, Angola, Europa.",
   },
   {
-    q: "E se a pessoa estiver com outra pessoa?",
-    a: "Esse é um dos casos mais comuns. O trabalho de amarração atua diretamente no vínculo emocional, enfraquecendo ligações superficiais e reacendendo o amor verdadeiro.",
+    q: "E se a pessoa já estiver com outra pessoa?",
+    a: "Este é o cenário onde a nossa intervenção é mais crítica. O Protocolo atua destruindo o vínculo forjado pela rival, isolando as energias para que só sobrem os sentimentos verdadeiros por ti.",
   },
   {
     q: "A consulta pelo WhatsApp é gratuita?",
-    a: "Sim, a primeira conversa é totalmente gratuita e sem compromisso. A Guia Maria Helena analisa o teu caso e indica o melhor caminho espiritual.",
+    a: "Sim, a primeira análise do teu caso é totalmente gratuita. Só agimos espiritualmente depois de provar, detetar a verdade ocultada e após a tua autorização direta.",
   },
 ];
 

@@ -2,19 +2,19 @@ import { Magnet, Scissors, ShieldCheck } from "lucide-react";
 
 const items = [
   {
-    title: "A Inversão Magnética Dominante",
+    title: "1. Descoberta e Investigação da Mentira",
     icon: Magnet,
-    text: "Chega de implorar atenção. O Protocolo inverte as polaridades do casal. É ele(a) quem vai sentir a ansiedade do afastamento e o impulso incontrolável de te ligar a pedir perdão.",
+    text: "Muitos afastamentos escondem a manipulação de terceiros. A Vidência Rastreadora descobre rapidamente quem ou o que causou o bloqueio, trazendo a verdade oculta à luz.",
   },
   {
-    title: "Corte do Nó Cármico na Raiz",
+    title: "2. Corte Absoluto de Terceiros e Inveja",
     icon: Scissors,
-    text: "O motivo da separação não foram as brigas. Foi o acúmulo de inveja e bloqueios que 'cegaram' a pessoa amada. Nós cortamos esse nó num altar de alta magia secreta em 24h.",
+    text: "O trabalho cessa imediatamente qualquer ligação espiritual e física da pessoa amada com amantes e rivais. Cria um muro energético que impede qualquer interferência de destruir a vossa união.",
   },
   {
-    title: "A Blindagem Absoluta de Cristal",
+    title: "3. Bloqueio Mental e Domínio Magnético",
     icon: ShieldCheck,
-    text: "Não basta voltar. O trabalho espiritual não termina até que a vossa ligação seja 100% selada contra rivais, ex-parceiros e influências negativas. O vosso amor torna-se indestrutível.",
+    text: "Não basta voltar, é preciso garantir exclusividade. O protocolo age no subconsciente de quem amas, gerando repulsa por terceiros e um impulso incontrolável de pedir perdão e voltar para ti.",
   },
 ];
 

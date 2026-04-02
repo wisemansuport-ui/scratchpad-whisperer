@@ -7,7 +7,7 @@ import avatar6 from "@/assets/avatar-6.jpg";
 
 const testimonials = [
   {
-    text: "Guia Maria Helena, não tenho palavras. Em 3 dias apenas o meu namorado ligou-me aos prantos a pedir perdão, depois de semanas a ignorar as minhas mensagens. O seu dom é abençoado.",
+    text: "Não tenho palavras. A Guia Maria Helena usou a vidência e mostrou-me com quem e onde estava a acontecer a traição. Depois do corte, em 3 dias ele ligou-me aos prantos a pedir perdão.",
     author: "Cláudia M.",
     location: "Lisboa",
     stars: 5,
@@ -15,7 +15,7 @@ const testimonials = [
     timeAgo: "há 2 dias",
   },
   {
-    text: "Disseram-nos que éramos o passado e já tinham feito bruxaria para nos separar. O trabalho da dona Maria Helena quebrou tudo. A minha esposa está de volta a casa tal como me prometeu. Obrigado por tudo.",
+    text: "Disseram-nos que éramos o passado e alguém já tinha feito trabalhos para afastar a minha esposa. O protocolo de bloqueio quebrou tudo. Hoje a rival colhe o que plantou e nós estamos blindados.",
     author: "Ricardo V.",
     location: "Porto",
     stars: 5,
@@ -23,7 +23,7 @@ const testimonials = [
     timeAgo: "há 5 dias",
   },
   {
-    text: "Estava a sofrer há 6 meses, sem dormir, sem comer. Numa única consulta a Guia Maria Helena viu tudo sobre o meu caso. Em 2 semanas ele voltou completamente diferente, apaixonado como no início.",
+    text: "Estava a sofrer há 6 meses. Numa única consulta revelou toda a verdade que estava nas minhas costas. Fez o isolamento e ele mudou completamente. Tem agora um bloqueio e só me procura a mim.",
     author: "Patrícia S.",
     location: "Braga",
     stars: 5,
@@ -31,7 +31,7 @@ const testimonials = [
     timeAgo: "há 1 semana",
   },
   {
-    text: "Já tinha ido a outros guias e nenhum resolveu. A Maria Helena foi a única que me disse a verdade e cumpriu o que prometeu. Hoje estamos juntos e mais fortes que nunca.",
+    text: "Já tinha ido a outros e nenhum resolveu. Foi a única que cortou as energias de terceiros e cumpriu. A pessoa amada afastou-se das amizades venenosas e hoje o nosso amor é inquebrável.",
     author: "Fátima L.",
     location: "Coimbra",
     stars: 5,
@@ -39,7 +39,7 @@ const testimonials = [
     timeAgo: "há 2 semanas",
   },
   {
-    text: "O meu marido saiu de casa por causa de outra mulher. A guia fez o trabalho e em 10 dias ele cortou com ela e voltou arrependido. Não acreditava se não tivesse vivido.",
+    text: "O meu marido saiu de casa por causa da tal 'amiga'. A guia fez o bloqueio mental e em 10 dias ele sentiu asco total da outra e voltou arrependido. Não acreditava se não tivesse vivido.",
     author: "Ana R.",
     location: "Faro",
     stars: 5,
@@ -47,7 +47,7 @@ const testimonials = [
     timeAgo: "há 3 semanas",
   },
   {
-    text: "Procurei a Guia Maria Helena como última esperança. Ela disse-me para confiar e ter paciência. Em menos de 1 mês a minha namorada voltou a falar comigo e hoje já vivemos juntos novamente.",
+    text: "Procurei ajuda como última esperança para afastar a influência ruim que envolvia a minha parceira. Funcionou na perfeição. Hoje vivemos livres de inveja e o nosso vínculo está fechado.",
     author: "Bruno T.",
     location: "Setúbal",
     stars: 4,

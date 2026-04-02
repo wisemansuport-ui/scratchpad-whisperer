@@ -9,32 +9,32 @@ import ritual5 from "@/assets/ritual-5.png";
 const slides = [
   {
     src: ritual1,
-    title: "Ritual de Amarração de Alta Força",
-    desc: "Velas sagradas e oferendas firmadas no altar para reconectar os caminhos amorosos.",
+    title: "Investigação Oculta",
+    desc: "Sabe a verdade. Vidência intensa para descobrir com quem e porquê a pessoa amada se afastou.",
     icon: Flame,
   },
   {
     src: ritual2,
-    title: "Altar de Adoçamento Amoroso",
-    desc: "Trabalho com ervas sagradas e entidades de alta luz para suavizar o coração endurecido.",
+    title: "Corte Energético de Rivais",
+    desc: "Trabalho vigoroso para cortar vínculos afetivos com amantes e afastar más influências.",
     icon: Heart,
   },
   {
     src: ritual3,
-    title: "Oferenda Espiritual de Reconquista",
-    desc: "Ritual ancestral com velas vermelhas e flores para invocar o amor verdadeiro.",
+    title: "Limpeza de Magia e Inveja",
+    desc: "Purificação imediata de bruxarias feitas por terceiros para causar a vossa separação.",
     icon: Sparkles,
   },
   {
     src: ritual4,
-    title: "Leitura de Cartas Espirituais",
-    desc: "Consulta divinatória para revelar os bloqueios e o caminho do teu amor.",
+    title: "Bloqueio Subconsciente",
+    desc: "Gera repulsa por outras pessoas na mente de quem amas, forçando saudade e arrependimento.",
     icon: ScrollText,
   },
   {
     src: ritual5,
-    title: "Cristais de Cura Energética",
-    desc: "Quartzo rosa e ametista alinhados para purificar e reacender a conexão amorosa.",
+    title: "Blindagem Absoluta",
+    desc: "O vosso vínculo amoroso é selado espiritualmente, imune a futuras fofocas, traições ou olho gordo.",
     icon: Gem,
   },
 ];
