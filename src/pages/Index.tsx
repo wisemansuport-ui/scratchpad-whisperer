@@ -67,8 +67,9 @@ const Index = () => {
         {/* Ponto 11: Quiz de qualificação antes do WhatsApp */}
         <div ref={addRevealRef} className="reveal">
           <div className="my-12 mt-20" id="quiz-section" style={{ scrollMarginTop: '100px' }}>
-            <h2 className="flex items-center justify-center gap-2 text-center text-xl md:text-2xl font-cinzel text-gold mb-2">
-              <Sparkles className="w-6 h-6" /> O Teu Amor Ainda Tem Solução?
+            <h2 className="text-center text-xl md:text-2xl font-cinzel text-gold mb-2">
+              <Sparkles className="w-6 h-6 inline-block align-top mr-2" />
+              O Teu Amor Ainda Tem Solução?
             </h2>
             <p className="text-center text-muted-foreground text-sm mb-8">
               Responde a 3 perguntas rápidas e descobre o ritual ideal para o teu caso.

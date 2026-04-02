@@ -271,10 +271,13 @@ const QuizQualificacao = () => {
       </div>
 
       {/* Question */}
-      <h3 className="text-lg md:text-xl font-cinzel font-bold text-foreground mb-1">
-        {step.question}
-      </h3>
-      <p className="text-sm text-muted-foreground mb-6">{step.subtitle}</p>
+      {/* Question */}
+      <div className="text-center">
+        <h3 className="text-lg md:text-xl font-cinzel font-bold text-foreground mb-1">
+          {step.question}
+        </h3>
+        <p className="text-sm text-muted-foreground mb-6">{step.subtitle}</p>
+      </div>
 
       {/* Options */}
       <div className="flex flex-col gap-3">
