@@ -1,15 +1,20 @@
+import { Magnet, Scissors, ShieldCheck } from "lucide-react";
+
 const items = [
   {
-    title: "Magia de Alta Força e Eficácia",
-    text: "Chega de sofreres com promessas vazias e charlatães. Os meus trabalhos de amarração e adoçamento atacam diretamente as energias que estão a separar os vossos caminhos, quebrando bloqueios e orgulho.",
+    title: "A Inversão Magnética Dominante",
+    icon: Magnet,
+    text: "Chega de implorar atenção. O Protocolo inverte as polaridades do casal. É ele(a) quem vai sentir a ansiedade do afastamento e o impulso incontrolável de te ligar a pedir perdão.",
   },
   {
-    title: "Sigilo Absoluto e Garantido",
-    text: "O desespero e a dor de um amor partido são sagrados. Todo o ritual é traçado e mantido em segredo rigoroso. Ninguém, especialmente a pessoa amada, saberá como ou por que decidiu voltar a procurar-te tão repentinamente.",
+    title: "Corte do Nó Cármico na Raiz",
+    icon: Scissors,
+    text: "O motivo da separação não foram as brigas. Foi o acúmulo de inveja e bloqueios que 'cegaram' a pessoa amada. Nós cortamos esse nó num altar de alta magia secreta em 24h.",
   },
   {
-    title: "Resultados Acelerados (24 Horas)",
-    text: "A energia não conhece distância. Assim que o teu trabalho é firmado no altar, as correntes invisíveis começam a puxar os pensamentos da pessoa até ti. A saudade aperta, o telefone toca.",
+    title: "A Blindagem Absoluta de Cristal",
+    icon: ShieldCheck,
+    text: "Não basta voltar. O trabalho espiritual não termina até que a vossa ligação seja 100% selada contra rivais, ex-parceiros e influências negativas. O vosso amor torna-se indestrutível.",
   },
 ];
 
@@ -20,10 +25,11 @@ const PunchList = () => (
         key={item.title}
         className="bg-card/80 border border-border border-l-[3px] border-l-gold p-5 md:p-6 rounded-sm shadow-[0_10px_30px_rgba(0,0,0,0.5)] text-sm md:text-base"
       >
-        <strong className="text-gold font-cinzel text-lg block mb-1">
+        <strong className="flex items-center gap-2 text-gold font-cinzel text-lg mb-2">
+          <item.icon className="w-5 h-5 flex-shrink-0" />
           {item.title}
         </strong>
-        {item.text}
+        <p className="text-muted-foreground">{item.text}</p>
       </li>
     ))}
   </ul>
