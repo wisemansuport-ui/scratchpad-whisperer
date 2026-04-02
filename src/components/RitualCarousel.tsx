@@ -77,7 +77,21 @@ const RitualCarousel = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded pointer-events-none" />
 
         {/* Caption overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-5 text-white z-10">
+        <div className="absolute bottom-0 left-0 right-0 p-5 text-white z-10 flex flex-col bg-gradient-to-t from-black/95 to-transparent">
+          {/* Dots */}
+          <div className="flex gap-2 justify-center mb-4">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`h-2 rounded-full transition-all duration-300 pointer-events-auto ${
+                  i === current ? "bg-gold w-6" : "bg-white/40 w-2 hover:bg-white/60"
+                }`}
+                aria-label={`Imagem ${i + 1}`}
+              />
+            ))}
+          </div>
+
           <div className="flex items-center gap-2 mb-2">
             <slide.icon className="w-5 h-5 text-gold flex-shrink-0" />
             <h3 className="font-cinzel font-bold text-base md:text-lg text-gold drop-shadow-lg leading-tight">
@@ -93,32 +107,18 @@ const RitualCarousel = () => {
       {/* Navigation arrows */}
       <button
         onClick={prev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/60 hover:bg-background/80 text-gold w-9 h-9 rounded-full flex items-center justify-center transition-colors text-lg backdrop-blur-sm"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/60 hover:bg-background/80 text-gold w-9 h-9 rounded-full flex items-center justify-center transition-colors text-lg backdrop-blur-sm z-30"
         aria-label="Anterior"
       >
         ‹
       </button>
       <button
         onClick={next}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/60 hover:bg-background/80 text-gold w-9 h-9 rounded-full flex items-center justify-center transition-colors text-lg backdrop-blur-sm"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/60 hover:bg-background/80 text-gold w-9 h-9 rounded-full flex items-center justify-center transition-colors text-lg backdrop-blur-sm z-30"
         aria-label="Próxima"
       >
         ›
       </button>
-
-      {/* Dots */}
-      <div className="absolute bottom-[90px] left-1/2 -translate-x-1/2 flex gap-2 z-20">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === current ? "bg-gold w-6" : "bg-white/40 w-2 hover:bg-white/60"
-            }`}
-            aria-label={`Imagem ${i + 1}`}
-          />
-        ))}
-      </div>
     </div>
   );
 };
