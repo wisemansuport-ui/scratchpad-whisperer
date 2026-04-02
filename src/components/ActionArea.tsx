@@ -17,15 +17,17 @@ const ActionArea = () => {
 
       <RitualCarousel />
 
-      <a 
-        href="#quiz-section"
-        onClick={scrollToQuiz}
-        className="inline-flex items-center justify-center gap-3 px-8 py-4 w-full md:w-auto min-w-[320px] rounded-full font-bold text-lg md:text-xl text-black bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 hover:scale-[1.02] shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)] transition-all duration-300 relative overflow-hidden group mx-auto"
-      >
-        {/* Efeito de brilho passando */}
-        <span className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12" />
-        <span className="relative flex items-center gap-2">Descobre o Teu Ritual <Sparkles className="w-6 h-6 animate-pulse" /></span>
-      </a>
+      <div className="flex justify-center w-full">
+        <a 
+          href="#quiz-section"
+          onClick={scrollToQuiz}
+          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 w-full max-w-[320px] rounded-full font-bold text-lg md:text-xl text-black bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 hover:scale-[1.02] shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)] transition-all duration-300 relative overflow-hidden group"
+        >
+          {/* Efeito de brilho passando */}
+          <span className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12" />
+          <span className="relative flex items-center gap-2">Descobre o Teu Ritual <Sparkles className="w-5 h-5 animate-pulse" /></span>
+        </a>
+      </div>
 
       <div className="mt-6 text-xs text-muted-foreground flex justify-center gap-5 flex-wrap">
         <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Conversa 100% Confidencial</span>
