@@ -4,15 +4,15 @@ import { Sparkles } from "lucide-react";
 const HeroSection = () => (
   <section className="text-center mb-10">
     <span className="inline-flex items-center gap-2 font-cinzel text-[11px] font-extrabold text-gold uppercase tracking-[2px] border border-gold/40 px-3.5 py-1.5 bg-gold/5 rounded-sm mb-6">
-      <Sparkles className="w-3.5 h-3.5" /> Atendimento Espiritual Confidencial
+      <Sparkles className="w-3.5 h-3.5" /> Investigação e Resgate Amoroso
     </span>
 
     <h1 className="text-[32px] md:text-[40px] leading-[1.15] font-black font-cinzel mb-6">
-      A Falha Não É Tua. Ele Afastou-se Por Um <span className="text-gold">Bloqueio Cármico</span> Oculto.
+      A Falha Não Foi Tua. Há Uma <span className="text-gold">Terceira Energia</span> A Controlar A Mente De Quem Amas.
     </h1>
 
     <h2 className="text-[19px] font-normal text-muted-foreground italic max-w-[650px] mx-auto mb-6">
-      Descobre como o <strong>Protocolo de Inversão Magnética</strong> limpa as energias de inveja e faz a pessoa amada voltar arrependida, sem que precises de mandar uma única mensagem.
+      Descobre a verdade dolorosa. Corta qualquer laço oculto com rivais e aplica um <strong>Bloqueio Mental Intenso</strong> que fará a pessoa amada sentir repulsa por qualquer pessoa que não sejas tu.
     </h2>
 
     {/* Ponto 6: Contador de resultados */}
