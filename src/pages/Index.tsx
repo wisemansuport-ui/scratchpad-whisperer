@@ -7,7 +7,6 @@ import ActionArea from "@/components/ActionArea";
 import ProofGrid from "@/components/ProofGrid";
 import FAQSection from "@/components/FAQSection";
 
-import ExitIntentPopup from "@/components/ExitIntentPopup";
 import QuizQualificacao from "@/components/QuizQualificacao";
 import CookieBanner from "@/components/CookieBanner";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -94,9 +93,6 @@ const Index = () => {
       </div>
 
 
-
-      {/* Ponto 7: Exit-intent popup */}
-      <ExitIntentPopup />
 
       <FloatingWhatsApp />
 
