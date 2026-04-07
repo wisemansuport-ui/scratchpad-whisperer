@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, BellRing } from "lucide-react";
 
 // Fixed 24h countdown that resets at midnight — feels more real
 const getMidnightEnd = () => {
@@ -42,6 +42,17 @@ const ScarcityBar = () => {
   const [timeLeft, setTimeLeft] = useState(() => Math.max(0, endTime - Date.now()));
   const viewers = useViewers();
 
+  // Strategy A: Escassez Dinâmica
+  const [slots, setSlots] = useState(() => {
+    // Initialize from storage or default to 2
+    if (typeof window !== 'undefined') {
+      const stored = sessionStorage.getItem("scarcity-slots");
+      if (stored) return parseInt(stored, 10);
+    }
+    return 2;
+  });
+  const [toastVisible, setToastVisible] = useState(false);
+
   useEffect(() => {
     const timer = setInterval(() => {
       const remaining = Math.max(0, endTime - Date.now());
@@ -50,6 +61,30 @@ const ScarcityBar = () => {
     }, 1000);
     return () => clearInterval(timer);
   }, [endTime]);
+
+  // Handlers for Strategy A
+  useEffect(() => {
+    if (slots === 2) {
+      // Após 12 segundos, surge a notificação da Margarida
+      const dropTimer = setTimeout(() => {
+        setToastVisible(true);
+        
+        // Exatamente 1.5s depois do toast aparecer, a barra superior atualiza para "1 vaga"
+        setTimeout(() => {
+          setSlots(1);
+          sessionStorage.setItem("scarcity-slots", "1");
+        }, 1500);
+        
+        // Esconde o toast após 7 segundos
+        setTimeout(() => {
+          setToastVisible(false);
+        }, 8500);
+        
+      }, 12000); 
+      
+      return () => clearTimeout(dropTimer);
+    }
+  }, [slots]);
 
   const hours = Math.floor(timeLeft / 3600000);
   const minutes = Math.floor((timeLeft % 3600000) / 60000);
@@ -60,7 +95,9 @@ const ScarcityBar = () => {
     <div className="bg-scarcity sticky top-0 z-50 text-foreground">
       <div className="text-center py-2 px-4 font-semibold text-[12px] md:text-[13px] tracking-wide flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
         <span className="flex items-center gap-1"><AlertTriangle className="w-4 h-4 text-yellow-300" /> ATENÇÃO: Apenas</span>
-        <span className="font-black text-yellow-300">2 vagas disponíveis</span>
+        <span key={slots} className={`font-black text-yellow-300 transition-all duration-500 ${slots === 1 ? 'animate-[ping_1.5s_ease-out_1]' : ''}`}>
+          {slots} {slots === 1 ? 'vaga disponível' : 'vagas disponíveis'}
+        </span>
         <span>para hoje —</span>
         <span className="font-black text-yellow-300 tabular-nums">
           {pad(hours)}:{pad(minutes)}:{pad(seconds)}
@@ -75,6 +112,32 @@ const ScarcityBar = () => {
           <span>a ver agora</span>
         </span>
       </div>
+
+      {/* Floating Toast Notification (Strategy A) */}
+      <div 
+        className={`fixed bottom-24 left-4 z-[110] max-w-[320px] bg-card border border-gold/40 rounded-lg p-4 shadow-[0_10px_40px_rgba(0,0,0,0.8)] backdrop-blur-md transition-all duration-700
+          ${toastVisible ? 'opacity-100 translate-y-0 translate-x-0' : 'opacity-0 translate-y-10 -translate-x-10 pointer-events-none'}`}
+      >
+        <div className="flex items-start gap-3">
+          <div className="bg-gold/20 p-2 rounded-full mt-0.5">
+            <BellRing className="w-5 h-5 text-gold animate-[ring_2s_ease-in-out_infinite] origin-top" />
+          </div>
+          <div>
+            <p className="text-[13px] font-semibold text-foreground mb-1 leading-snug">
+              Margarida F. (Porto) garantiu a <strong className="text-red-400">penúltima vaga</strong> gratuita!
+            </p>
+            <p className="text-[11px] text-muted-foreground w-full flex justify-between items-center">
+              <span>AGORA MESMO</span>
+              <span className="text-gold font-bold animate-pulse">Só resta 1 vaga</span>
+            </p>
+          </div>
+        </div>
+        {/* Progress bar emptying out */}
+        {toastVisible && (
+          <div className="absolute bottom-0 left-0 h-1 bg-gold rounded-full w-full animate-[shrink_7s_linear_forwards]" />
+        )}
+      </div>
+
     </div>
   );
 };

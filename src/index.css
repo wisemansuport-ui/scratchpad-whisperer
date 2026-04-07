@@ -89,3 +89,14 @@ All colors MUST be HSL.
   opacity: 1;
   transform: translateY(0);
 }
+
+@keyframes shrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes ring {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-15deg); }
+}
