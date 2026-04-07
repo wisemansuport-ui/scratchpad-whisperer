@@ -10,6 +10,7 @@ import FAQSection from "@/components/FAQSection";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import QuizQualificacao from "@/components/QuizQualificacao";
 import CookieBanner from "@/components/CookieBanner";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -97,9 +98,12 @@ const Index = () => {
       {/* Ponto 7: Exit-intent popup */}
       <ExitIntentPopup />
 
+      <FloatingWhatsApp />
+
       <CookieBanner />
     </>
   );
 };
 
 export default Index;
+
