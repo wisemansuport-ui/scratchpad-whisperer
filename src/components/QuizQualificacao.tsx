@@ -31,54 +31,54 @@ interface QuizStep {
 
 const steps: QuizStep[] = [
   {
-    question: "O QUE TE TROUXE AQUI HOJE?",
-    subtitle: "A tua resposta ajuda a calibrar a vidência inicial.",
+    question: "O QUE ESTÁ A DESTRUIR A TUA PAZ NESTE MOMENTO?",
+    subtitle: "Sê verdadeira. O Tarot não esconde a presença de intrusos ou feitiços.",
     options: [
-      { label: "Desconfio de manipulação ou traição", icon: Search, value: "traicao" },
-      { label: "Afastamento repentino (mudou do nada)", icon: UserX, value: "afastamento" },
-      { label: "Fim recente devido a intrigas e brigas", icon: HeartCrack, value: "brigas" },
+      { label: "Sinto que há bruxaria, feitiço ou inveja a afastar o meu amor", icon: ShieldAlert, value: "traicao" },
+      { label: "Ele(a) mudou da noite para o dia, ficou frio e distante do nada", icon: UserX, value: "afastamento" },
+      { label: "Brigas inexplicáveis, como se uma força nos quisesse separar", icon: Flame, value: "brigas" },
     ],
   },
   {
-    question: "HÁ QUANTO TEMPO NOTAS ESTAS INTERFERÊNCIAS?",
-    subtitle: "O nível de urgência depende da profundidade do enraizamento. Sê sincera.",
+    question: "HÁ QUANTO TEMPO O TEU AMOR ESTÁ SOB ESTA INFLUÊNCIA?",
+    subtitle: "Atenção: Quanto mais o tempo passa, mais o corte espiritual se enraíza.",
     options: [
-      { label: "Menos de 1 mês (Alerta Leve)", icon: Clock, value: "pouco" },
-      { label: "1 a 6 meses (Alerta Médio)", icon: Clock, value: "medio" },
-      { label: "Mais de 6 meses (Alerta Severo)", icon: Clock, value: "muito" },
+      { label: "Algumas semanas (O laço rápido ainda é fácil de reverter)", icon: Clock, value: "pouco" },
+      { label: "Meses de agonia (Risco crítico de bloqueio cármico severo)", icon: HeartCrack, value: "medio" },
+      { label: "Já perdi o contacto ou assumiu amante (Emergência Espiritual)", icon: PhoneOff, value: "muito" },
     ],
   },
   {
-    question: "QUAL É O TEU OBJETIVO PRINCIPAL PARA AS PRÓXIMAS 48H?",
-    subtitle: "O que pretendes que aconteça no teu caminho?",
+    question: "SE AGIRMOS AINDA HOJE, O QUE EXIGES QUE ACONTEÇA?",
+    subtitle: "Esta resposta calibra a agressividade do meu ritual magnético.",
     options: [
-      { label: "Saber a verdade e afastar rivais", icon: Eye, value: "verdade" },
-      { label: "Bloqueio mental para o regresso", icon: Magnet, value: "bloqueio" },
-      { label: "Cortar trabalhos e ser feliz", icon: ShieldAlert, value: "protecao" },
+      { label: "Desmascarar a rival e causar nojo absoluto na mente dele(a)", icon: Eye, value: "verdade" },
+      { label: "Gerar arrependimento e fazê-lo(a) voltar a rastejar e implorar", icon: Magnet, value: "bloqueio" },
+      { label: "Quebrar toda a inveja e selar a nossa relação de forma irreversível", icon: Sparkles, value: "protecao" },
     ],
   },
 ];
 
 const resultMessages: Record<string, { title: string; message: string; urgency: string }> = {
   separacao_recente: {
-    title: "Encontrámos um Padrão de Falha Energética.",
-    message: "A energia entre vocês ainda existe, mas está a ser bloqueada por um nó invisível. O Protocolo Magnético reverte isto se agirmos rápido.",
-    urgency: "🟢 Vaga confidencial disponível",
+    title: "⚠️ ALERTA: FIZERAM UM TRABALHO PARA VOS SEPARAR.",
+    message: "A mudança repentina não foi culpa vossa. Há um trabalho de corte energético feito recentemente para secar o afeto e sugar as vossas energias. O Protocolo Magnético ainda pode reverter isto e devolver o alvo para ti antes que seja irreversível.",
+    urgency: "🟢 1 Vaga de Urgência Liberada",
   },
   com_outra_pessoa: {
-    title: "O Bloqueio Cármico é severo (Falsa Ligação).",
-    message: "O teu amor está sob a influência densa de terceiros. O nosso Ritual de Corte de Nós Cármicos dissolve essa cortina e desfaz a cegueira espiritual dele(a).",
-    urgency: "🔴 Ação espiritual urgente necessária",
+    title: "👁️ A MENTE DELE(A) FOI MANIPULADA POR TERCEIROS.",
+    message: "A pessoa que amas sofre de cegueira espiritual severa. Existe uma forte influência (inveja ou amarração) a puxar a energia para longe. O nosso Ritual de Bloqueio Subconsciente destrói essa ligação pirata e gera repulsa automática por qualquer rival.",
+    urgency: "🔴 AÇÃO IMEDIATA REQUERIDA (Risco de Perda Permanente)",
   },
   sem_contacto: {
-    title: "O Fio Vermelho ainda vos une.",
-    message: "Mesmo sem contacto físico, a energia que vos marcou não apagou. A Inversão Magnética vai ativar gatilhos de saudade incontrolável nele(a) à distância.",
-    urgency: "🟡 Frequência ainda ativa. Agir rápido",
+    title: "✂️ O VOSSO FIO VERMELHO ESTÁ PRESTES A PARTIR.",
+    message: "O orgulho da outra pessoa está a ser alimentado por ataques espirituais silenciosos que vocês têm sofrido. Se não for feito um escudo de imediato, o bloqueio torna-se definitivo. A boa notícia: consigo criar um feitiço de saudade incontrolável agora mesmo.",
+    urgency: "🟡 ENERGIA EM DECLÍNIO. Agir em Máximo 24H",
   },
   relacao_desgastada: {
-    title: "As polaridades estão completamente invertidas.",
-    message: "A relação sofre de vampirismo energético. O Protocolo de Adoçamento Alfa varre essa negatividade, purifica a aura e reacende a química original da relação.",
-    urgency: "🟢 Cenário ideal para inversão magnética",
+    title: "🧛 VAMPIRISMO ENERGÉTICO EXTREMO DETETADO.",
+    message: "Existe pura magia de peso plantada no vosso caminho para anular a química e destruir a vontade de estarem juntos. Estão a ser sugados por espíritos obsessores invocados pela inveja. Preciso de blindar a relação HOJE para quebrar este ciclo.",
+    urgency: "🟢 Protocolo de Contra-Ataque Energético Pronto",
   },
 };
 
@@ -109,10 +109,10 @@ const QuizQualificacao = () => {
   const startAnalysis = () => {
     setIsAnalyzing(true);
     const texts = [
-      "A calcular probabilidades cósmicas...",
-      "A verificar campo magnético do casal...",
-      "A procurar laços de outras vidas...",
-      "Análise concluída. A preparar revelação..."
+      "A invocar proteções espirituais de alto feitiço...",
+      "A fazer scan no campo magnético à procura de rivais...",
+      "A procurar sinais de magia e trabalhos enterrados...",
+      "CRÍTICO: Bloqueio energético invasivo detetado. A desencriptar diagnóstico..."
     ];
     let i = 0;
     const interval = setInterval(() => {
@@ -284,15 +284,15 @@ const QuizQualificacao = () => {
             className={`flex items-center gap-3 w-full text-left px-4 py-3.5 rounded border transition-all duration-300 text-sm
               ${
                 selectedOption === opt.value
-                  ? "border-gold bg-gold/15 text-gold scale-[0.98]"
-                  : "border-border bg-card/80 text-foreground hover:border-gold/40 hover:bg-gold/5"
+                  ? "border-red-600/80 bg-red-950/50 text-red-400 scale-[0.98] shadow-inner shadow-red-900/60"
+                  : "border-border bg-card/80 text-foreground hover:border-red-500/40 hover:bg-red-950/20"
               }
             `}
           >
             <opt.icon className="w-5 h-5 flex-shrink-0" />
             <span className="font-medium">{opt.label}</span>
             {selectedOption === opt.value && (
-              <span className="ml-auto text-gold text-lg">✓</span>
+              <span className="ml-auto text-red-500 font-bold animate-pulse text-lg">✓</span>
             )}
           </button>
         ))}
