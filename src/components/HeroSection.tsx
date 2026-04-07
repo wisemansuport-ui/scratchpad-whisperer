@@ -18,7 +18,7 @@ const HeroSection = () => (
     {/* Ponto 6: Contador de resultados */}
     <div className="flex flex-wrap justify-center gap-6 mb-8">
       {[
-        { value: "4.200+", label: "Casais Reconectados" },
+        { value: "4.165", label: "Casais Reconectados" },
         { value: "10+", label: "Anos de Experiência" },
         { value: "98%", label: "Taxa de Sucesso" },
       ].map((stat) => (
