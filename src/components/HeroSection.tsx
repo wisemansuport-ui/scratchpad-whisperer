@@ -32,7 +32,7 @@ const HeroSection = () => (
     <WhatsAppButton />
 
     <p className="mt-6 text-sm font-semibold text-red-500/90 max-w-[450px] mx-auto text-center px-4 animate-pulse">
-      Devido ao desgaste energético que cada análise exige, realizamos apenas 5 Diagnósticos Gratuitos por dia. Verifique se há vagas restando hoje no WhatsApp.
+      Devido ao desgaste energético que cada análise exige, realizamos apenas 2 Diagnósticos Gratuitos por dia. Verifique se a vaga ainda está disponível pelo WhatsApp.
     </p>
   </section>
 );
