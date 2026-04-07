@@ -60,7 +60,7 @@ const ScarcityBar = () => {
     <div className="bg-scarcity sticky top-0 z-50 text-foreground">
       <div className="text-center py-2 px-4 font-semibold text-[12px] md:text-[13px] tracking-wide flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
         <span className="flex items-center gap-1"><AlertTriangle className="w-4 h-4 text-yellow-300" /> ATENÇÃO: Apenas</span>
-        <span className="font-black text-yellow-300">3 vagas disponíveis</span>
+        <span className="font-black text-yellow-300">2 vagas disponíveis</span>
         <span>para hoje —</span>
         <span className="font-black text-yellow-300 tabular-nums">
           {pad(hours)}:{pad(minutes)}:{pad(seconds)}
