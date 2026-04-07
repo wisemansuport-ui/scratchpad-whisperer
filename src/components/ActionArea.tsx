@@ -30,8 +30,8 @@ const ActionArea = () => {
       </div>
 
       <div className="mt-6 text-xs text-muted-foreground flex justify-center gap-5 flex-wrap">
-        <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Conversa 100% Confidencial</span>
-        <span className="flex items-center gap-1.5"><MessageCircle className="w-3.5 h-3.5" /> Atendimento Humanizado</span>
+        <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Atendimento 100% Discreto e Sigilo Absoluto</span>
+        <span className="flex items-center gap-1.5"><MessageCircle className="w-3.5 h-3.5" /> Diagnóstico de Viabilidade</span>
       </div>
     </div>
   );

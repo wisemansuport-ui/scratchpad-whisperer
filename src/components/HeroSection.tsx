@@ -4,7 +4,7 @@ import { Sparkles } from "lucide-react";
 const HeroSection = () => (
   <section className="text-center mb-10">
     <span className="inline-flex items-center gap-2 font-cinzel text-[11px] font-extrabold text-gold uppercase tracking-[2px] border border-gold/40 px-3.5 py-1.5 bg-gold/5 rounded-sm mb-6">
-      <Sparkles className="w-3.5 h-3.5" /> Investigação e Resgate Amoroso
+      <Sparkles className="w-3.5 h-3.5" /> Diagnóstico de Viabilidade
     </span>
 
     <h1 className="text-[32px] md:text-[40px] leading-[1.15] font-black font-cinzel mb-6">
@@ -12,7 +12,7 @@ const HeroSection = () => (
     </h1>
 
     <h2 className="text-[19px] font-normal text-muted-foreground italic max-w-[650px] mx-auto mb-6">
-      Descobre a verdade dolorosa. Corta qualquer laço oculto com rivais e aplica um <strong>Bloqueio Mental Intenso</strong> que fará a pessoa amada sentir repulsa por qualquer pessoa que não sejas tu.
+      A culpa não é sua. Descubra a verdade em um <strong>Diagnóstico Espiritual Gratuito</strong>. Realizamos o <strong>Afastamento de Energias Rivais</strong> e um <strong>Desbloqueio Afetivo</strong> profundo para limpar o caminho.
     </h2>
 
     {/* Ponto 6: Contador de resultados */}
@@ -30,6 +30,10 @@ const HeroSection = () => (
     </div>
 
     <WhatsAppButton />
+
+    <p className="mt-6 text-sm font-semibold text-red-500/90 max-w-[450px] mx-auto text-center px-4 animate-pulse">
+      Devido ao desgaste energético que cada análise exige, realizamos apenas 5 Diagnósticos Gratuitos por dia. Verifique se há vagas restando hoje no WhatsApp.
+    </p>
   </section>
 );
 

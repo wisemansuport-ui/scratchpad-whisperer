@@ -11,11 +11,50 @@ const FloatingWhatsApp = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > 300);
+    const visibleElements = new Set<Element>();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleElements.add(entry.target);
+          } else {
+            visibleElements.delete(entry.target);
+          }
+        });
+        
+        // Se nenhum outro link do whatsapp estiver visível, mostramos o flutuante
+        setVisible(visibleElements.size === 0);
+      },
+      { root: null, rootMargin: "0px", threshold: 0 }
+    );
+
+    const observeLinks = () => {
+      const waLinks = document.querySelectorAll('a[href*="wa.me"]:not(#floating-whatsapp)');
+      waLinks.forEach(link => {
+        if (!link.hasAttribute('data-wa-observed')) {
+          link.setAttribute('data-wa-observed', 'true');
+          observer.observe(link);
+        }
+      });
+      
+      if (document.querySelectorAll('a[href*="wa.me"]:not(#floating-whatsapp)').length === 0) {
+        setVisible(true);
+      }
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    observeLinks();
+
+    const mutationObserver = new MutationObserver(() => {
+      observeLinks();
+    });
+    
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 
   return (

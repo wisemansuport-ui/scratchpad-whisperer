@@ -4,7 +4,16 @@ import { AlertTriangle } from "lucide-react";
 // Fixed 24h countdown that resets at midnight — feels more real
 const getMidnightEnd = () => {
   const stored = sessionStorage.getItem("scarcity-midnight-end");
-  if (stored) return parseInt(stored, 10);
+  const nowTime = Date.now();
+  
+  if (stored) {
+    const storedTime = parseInt(stored, 10);
+    // Only use stored time if it's in the future
+    if (storedTime > nowTime) {
+      return storedTime;
+    }
+  }
+  
   const now = new Date();
   const midnight = new Date(now);
   midnight.setHours(24, 0, 0, 0); // next midnight
