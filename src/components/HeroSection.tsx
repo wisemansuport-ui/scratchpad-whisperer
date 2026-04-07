@@ -18,9 +18,9 @@ const HeroSection = () => (
     {/* Ponto 6: Contador de resultados */}
     <div className="flex flex-wrap justify-center gap-6 mb-8">
       {[
-        { value: "4.165", label: "Casais Reconectados" },
+        { value: "787", label: "Casais Reconectados" },
         { value: "10+", label: "Anos de Experiência" },
-        { value: "98%", label: "Taxa de Sucesso" },
+        { value: "96%", label: "Taxa de Sucesso" },
       ].map((stat) => (
         <div key={stat.label} className="flex flex-col items-center bg-card/60 border border-gold/20 rounded px-5 py-3 min-w-[100px]">
           <span className="text-gold font-black font-cinzel text-2xl">{stat.value}</span>

@@ -92,37 +92,25 @@ const ScarcityBar = () => {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="bg-gradient-to-r from-background via-[#2a0808] to-background border-b border-red-900/50 sticky top-0 z-50 text-white shadow-xl">
-      <div className="text-center py-2.5 px-4 font-semibold text-[12px] md:text-[13px] tracking-wide flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5">
-        
-        <span className="flex items-center gap-1.5 text-red-500">
-          <AlertTriangle className="w-4 h-4 animate-pulse" /> 
-          <span className="uppercase tracking-[0.15em] text-[10px] md:text-[11px] font-black">Risco de Esgotamento:</span>
+    <div className="bg-scarcity sticky top-0 z-50 text-foreground">
+      <div className="text-center py-2 px-4 font-semibold text-[12px] md:text-[13px] tracking-wide flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+        <span className="flex items-center gap-1"><AlertTriangle className="w-4 h-4 text-yellow-300" /> ATENÇÃO: Apenas</span>
+        <span key={slots} className={`font-black text-yellow-300 transition-all duration-500 ${slots === 1 ? 'animate-[ping_1.5s_ease-out_1]' : ''}`}>
+          {slots} {slots === 1 ? 'vaga disponível' : 'vagas disponíveis'}
         </span>
-        
-        <span className="text-white/80">Restam apenas</span>
-        
-        <span key={slots} className={`font-black text-white px-2 py-0.5 rounded bg-red-600 shadow-[0_0_12px_rgba(220,38,38,0.6)] transition-all duration-500 ${slots === 1 ? 'animate-[ping_1.5s_ease-out_1]' : ''}`}>
-          {slots} {slots === 1 ? 'vaga' : 'vagas'}
-        </span>
-        
-        <span className="text-white/80">hoje —</span>
-        
-        <span className="font-bold text-red-300 tabular-nums bg-red-950/80 px-2 py-0.5 rounded border border-red-900 text-[11px] md:text-[12px] tracking-widest">
+        <span>para hoje —</span>
+        <span className="font-black text-yellow-300 tabular-nums">
           {pad(hours)}:{pad(minutes)}:{pad(seconds)}
         </span>
-        
-        <span className="hidden sm:inline text-white/20 ml-1 mr-1">|</span>
-        
-        <span className="flex items-center gap-1.5 bg-black/40 px-2.5 py-1 rounded-full border border-white/5">
+        <span className="hidden sm:inline text-white/60">|</span>
+        <span className="flex items-center gap-1">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
           </span>
-          <span className="text-red-400 font-bold">{viewers} online</span>
-          <span className="text-white/50 text-[10px] uppercase tracking-wider hidden sm:inline">a concorrer agora</span>
+          <span className="text-green-300 font-bold">{viewers} pessoas</span>
+          <span>a ver agora</span>
         </span>
-
       </div>
 
       {/* Floating Toast Notification (Strategy A) */}
