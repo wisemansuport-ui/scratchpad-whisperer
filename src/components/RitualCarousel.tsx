@@ -51,7 +51,7 @@ const RitualCarousel = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 8000); // Increased time from 5s to 8s
     return () => clearInterval(timer);
   }, [next]);
 
