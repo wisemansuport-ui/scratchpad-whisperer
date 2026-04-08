@@ -41,8 +41,10 @@ const WhatsAppButton = ({
       id="cta-whatsapp"
       className="inline-flex items-center justify-center gap-3 w-full max-w-[550px] bg-gradient-to-br from-whatsapp to-whatsapp-dark text-white no-underline text-base md:text-xl font-black py-5 px-6 rounded-full uppercase tracking-wide transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_35px_hsl(var(--whatsapp)/0.5)] border border-whatsapp/80 animate-pulse-green"
     >
-      <WhatsAppIcon />
-      {label}
+      <div className="w-6 h-6 flex-shrink-0">
+        <WhatsAppIcon />
+      </div>
+      <span className="text-center leading-tight">{label}</span>
     </a>
   );
 };

@@ -71,8 +71,8 @@ const Index = () => {
               <Sparkles className="w-6 h-6 inline-block align-top mr-2" />
               O Teu Amor Ainda Tem Solução?
             </h2>
-            <p className="text-center text-muted-foreground text-sm mb-8">
-              Responde a 3 perguntas rápidas e descobre o ritual ideal para o teu caso.
+            <p className="text-center text-muted-foreground text-[14px] md:text-[15px] mb-8 max-w-md mx-auto leading-relaxed">
+              Responde a <strong className="text-gold uppercase tracking-wider text-xs align-middle">5 perguntas secretas</strong> e obtém o teu <strong className="text-foreground">Diagnóstico Vibracional</strong> para descobrir se a vossa ligação ainda tem salvação.
             </p>
             <QuizQualificacao />
           </div>

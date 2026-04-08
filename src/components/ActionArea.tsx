@@ -25,13 +25,22 @@ const ActionArea = () => {
         >
           {/* Efeito de brilho passando */}
           <span className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12" />
-          <span className="relative flex items-center gap-2">Descobre o Teu Ritual <Sparkles className="w-5 h-5 animate-pulse" /></span>
+          <span className="relative flex items-center justify-center text-center flex-wrap gap-2 leading-tight">
+            <span>Descobre o Teu Ritual</span> 
+            <Sparkles className="w-5 h-5 animate-pulse flex-shrink-0" />
+          </span>
         </a>
       </div>
 
-      <div className="mt-6 text-xs text-muted-foreground flex justify-center gap-5 flex-wrap">
-        <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Atendimento 100% Discreto e Sigilo Absoluto</span>
-        <span className="flex items-center gap-1.5"><MessageCircle className="w-3.5 h-3.5" /> Diagnóstico de Viabilidade</span>
+      <div className="mt-6 text-xs text-muted-foreground flex justify-center gap-4 md:gap-5 flex-wrap">
+        <span className="flex items-start md:items-center text-left md:text-center gap-1.5 max-w-full">
+          <Lock className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 md:mt-0" /> 
+          <span>Atendimento 100% Discreto e Sigilo Absoluto</span>
+        </span>
+        <span className="flex items-start md:items-center text-left md:text-center gap-1.5 max-w-full">
+          <MessageCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 md:mt-0" /> 
+          <span>Diagnóstico de Viabilidade</span>
+        </span>
       </div>
     </div>
   );

@@ -25,9 +25,9 @@ const PunchList = () => (
         key={item.title}
         className="bg-card/80 border border-border border-l-[3px] border-l-gold p-5 md:p-6 rounded-sm shadow-[0_10px_30px_rgba(0,0,0,0.5)] text-sm md:text-base"
       >
-        <strong className="flex items-center gap-2 text-gold font-cinzel text-lg mb-2">
-          <item.icon className="w-5 h-5 flex-shrink-0" />
-          {item.title}
+        <strong className="flex items-start gap-2 text-gold font-cinzel text-lg mb-2">
+          <item.icon className="w-5 h-5 flex-shrink-0 mt-0.5" />
+          <span className="leading-snug text-left">{item.title}</span>
         </strong>
         <p className="text-muted-foreground">{item.text}</p>
       </li>

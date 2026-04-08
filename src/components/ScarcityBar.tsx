@@ -65,8 +65,17 @@ const ScarcityBar = () => {
   // Handlers for Strategy A
   useEffect(() => {
     if (slots === 2) {
-      // Após 12 segundos, surge a notificação da Margarida
+      // Após 40 segundos, surge a notificação da Margarida
       const dropTimer = setTimeout(() => {
+        // Pop sound effect for notification
+        try {
+          const audio = new Audio("https://cdn.pixabay.com/audio/2021/08/04/audio_0625c1539c.mp3");
+          audio.volume = 0.35;
+          audio.play().catch(() => {});
+        } catch (error) {
+          // ignore if Audio is not supported or blocked
+        }
+
         setToastVisible(true);
         
         // Exatamente 1.5s depois do toast aparecer, a barra superior atualiza para "1 vaga"
@@ -80,7 +89,7 @@ const ScarcityBar = () => {
           setToastVisible(false);
         }, 8500);
         
-      }, 12000); 
+      }, 40000); 
       
       return () => clearTimeout(dropTimer);
     }
@@ -92,25 +101,39 @@ const ScarcityBar = () => {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="bg-scarcity sticky top-0 z-50 text-foreground">
-      <div className="text-center py-2 px-4 font-semibold text-[12px] md:text-[13px] tracking-wide flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-        <span className="flex items-center gap-1"><AlertTriangle className="w-4 h-4 text-yellow-300" /> ATENÇÃO: Apenas</span>
-        <span key={slots} className={`font-black text-yellow-300 transition-all duration-500 ${slots === 1 ? 'animate-[ping_1.5s_ease-out_1]' : ''}`}>
-          {slots} {slots === 1 ? 'vaga disponível' : 'vagas disponíveis'}
-        </span>
-        <span>para hoje —</span>
-        <span className="font-black text-yellow-300 tabular-nums">
-          {pad(hours)}:{pad(minutes)}:{pad(seconds)}
-        </span>
-        <span className="hidden sm:inline text-white/60">|</span>
-        <span className="flex items-center gap-1">
+    <div className="bg-scarcity sticky top-0 z-50 shadow-[0_4px_20px_rgba(0,0,0,0.15)] border-b border-black/10">
+      <div className="w-full max-w-7xl mx-auto py-2.5 px-4 flex flex-col md:flex-row items-center justify-center gap-y-2 gap-x-4 text-[13px] md:text-[14px]">
+        
+        {/* Left Part: Alert & Slots */}
+        <div className="flex flex-wrap items-center justify-center gap-x-1.5 text-white/90 font-medium text-center leading-snug">
+          <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-black/20 border border-white/10 text-yellow-300 shadow-sm mr-1">
+            <AlertTriangle className="w-3.5 h-3.5" strokeWidth={2.5} />
+            <span className="font-bold tracking-wider text-[10px] md:text-[11px] uppercase">Atenção</span>
+          </div>
+          <span>
+            Apenas <strong key={slots} className={`text-yellow-300 font-extrabold mx-0.5 transition-all duration-500 ${slots === 1 ? 'animate-[ping_1.5s_ease-out_1]' : ''}`}>
+              {slots} {slots === 1 ? 'vaga disponível' : 'vagas disponíveis'}
+            </strong> para hoje —
+          </span>
+          <span className="font-black text-white tabular-nums bg-black/20 px-1.5 py-0.5 rounded ml-0.5 shadow-inner border border-white/5">
+            {pad(hours)}:{pad(minutes)}:{pad(seconds)}
+          </span>
+        </div>
+
+        {/* Divider - only desktop */}
+        <div className="hidden md:block w-px h-4 bg-white/20 rounded-full"></div>
+
+        {/* Right Part: Viewers */}
+        <div className="flex items-center gap-2 bg-black/15 px-3 py-1 rounded-full border border-white/5 shadow-inner">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
           </span>
-          <span className="text-green-300 font-bold">{viewers} pessoas</span>
-          <span>a ver agora</span>
-        </span>
+          <span className="text-white/90 text-[12px] md:text-[13px] tracking-wide">
+            <strong className="text-green-400 font-bold mr-1">{viewers}</strong>pessoas a ver agora
+          </span>
+        </div>
+
       </div>
 
       {/* Floating Toast Notification (Strategy A) */}

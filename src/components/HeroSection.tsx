@@ -7,7 +7,7 @@ const HeroSection = () => (
       <Sparkles className="w-3.5 h-3.5" /> Diagnóstico de Viabilidade
     </span>
 
-    <h1 className="text-[32px] md:text-[40px] leading-[1.15] font-black font-cinzel mb-6">
+    <h1 className="text-[32px] md:text-[40px] leading-[1.15] font-black font-cinzel mb-6 text-balance">
       A Falha Não Foi Tua. Há Uma <span className="text-gold">Terceira Energia</span> A Controlar A Mente De Quem Amas.
     </h1>
 
@@ -16,13 +16,13 @@ const HeroSection = () => (
     </h2>
 
     {/* Ponto 6: Contador de resultados */}
-    <div className="flex flex-wrap justify-center gap-6 mb-8">
+    <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-8">
       {[
         { value: "787", label: "Casais Reconectados" },
         { value: "10+", label: "Anos de Experiência" },
         { value: "96%", label: "Taxa de Sucesso" },
       ].map((stat) => (
-        <div key={stat.label} className="flex flex-col items-center bg-card/60 border border-gold/20 rounded px-5 py-3 min-w-[100px]">
+        <div key={stat.label} className="flex flex-col items-center bg-card/60 border border-gold/20 rounded px-4 md:px-5 py-3 min-w-[100px] flex-1 sm:flex-none">
           <span className="text-gold font-black font-cinzel text-2xl">{stat.value}</span>
           <span className="text-muted-foreground text-[11px] uppercase tracking-wider mt-0.5">{stat.label}</span>
         </div>

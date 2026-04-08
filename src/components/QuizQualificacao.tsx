@@ -34,18 +34,36 @@ const steps: QuizStep[] = [
     question: "O QUE ESTÁ A DESTRUIR A TUA PAZ NESTE MOMENTO?",
     subtitle: "Sê verdadeira. O Tarot não esconde a presença de intrusos ou feitiços.",
     options: [
-      { label: "Sinto que há bruxaria, feitiço ou inveja a afastar o meu amor", icon: ShieldAlert, value: "traicao" },
-      { label: "Ele(a) mudou da noite para o dia, ficou frio e distante do nada", icon: UserX, value: "afastamento" },
-      { label: "Brigas inexplicáveis, como se uma força nos quisesse separar", icon: Flame, value: "brigas" },
+      { label: "Sinto que há bruxaria, feitiço ou inveja a afastar o meu amor", icon: ShieldAlert, value: "afastamento_espiritual" },
+      { label: "Ele(a) mudou da noite para o dia, ficou frio e distante do nada", icon: UserX, value: "mudanca_repentina" },
+      { label: "Brigas inexplicáveis, como se uma força nos quisesse separar", icon: Flame, value: "conflito_constante" },
     ],
   },
   {
     question: "HÁ QUANTO TEMPO O TEU AMOR ESTÁ SOB ESTA INFLUÊNCIA?",
     subtitle: "Atenção: Quanto mais o tempo passa, mais o corte espiritual se enraíza.",
     options: [
-      { label: "Algumas semanas (O laço rápido ainda é fácil de reverter)", icon: Clock, value: "pouco" },
-      { label: "Meses de agonia (Risco crítico de bloqueio cármico severo)", icon: HeartCrack, value: "medio" },
-      { label: "Já perdi o contacto ou assumiu amante (Emergência Espiritual)", icon: PhoneOff, value: "muito" },
+      { label: "Algumas semanas (O laço rápido ainda é fácil de reverter)", icon: Clock, value: "semanas" },
+      { label: "Meses de agonia (Risco crítico de bloqueio cármico severo)", icon: HeartCrack, value: "meses" },
+      { label: "Já perdi o contacto ou assumiu amante (Emergência Espiritual)", icon: PhoneOff, value: "perda_total" },
+    ],
+  },
+  {
+    question: "SENTES ALGUM DESTES SINTOMAS RECENTEMENTE?",
+    subtitle: "Sê honesta, estes são os primeiros sinais somáticos de um ataque espiritual.",
+    options: [
+      { label: "Insónia pesada e ansiedade que aperta o peito de madrugada", icon: Eye, value: "insonia" },
+      { label: "Uma tristeza repentina, falta de ar ou dores inexplicáveis", icon: Frown, value: "dores" },
+      { label: "Pensamentos obsessivos que não consigo controlar de jeito nenhum", icon: Sparkles, value: "obsessao" },
+    ],
+  },
+  {
+    question: "COMO ACONTECEU A MUDANÇA DE COMPORTAMENTO DELE(A)?",
+    subtitle: "A resposta a isto ajuda-me a desvendar a origem do corte magnético.",
+    options: [
+      { label: "Foi de forma muito fria, repulsiva e do dia para a noite", icon: UserX, value: "repulsa" },
+      { label: "Disse que estava confuso(a) e cortou-me da vida do nada", icon: HeartCrack, value: "confusao" },
+      { label: "Houve forte manipulação dissimulada de família ou falsos amigos", icon: ShieldAlert, value: "manipulacao" },
     ],
   },
   {
@@ -60,24 +78,19 @@ const steps: QuizStep[] = [
 ];
 
 const resultMessages: Record<string, { title: string; message: string; urgency: string }> = {
-  separacao_recente: {
+  afastamento_espiritual: {
     title: "⚠️ ALERTA: FIZERAM UM TRABALHO PARA VOS SEPARAR.",
-    message: "A mudança repentina não foi culpa vossa. Há um trabalho de corte energético feito recentemente para secar o afeto e sugar as vossas energias. O Protocolo Magnético ainda pode reverter isto e devolver o alvo para ti antes que seja irreversível.",
+    message: "A mudança repentina não foi culpa vossa. Há um trabalho de corte energético feito recentemente para secar o afeto e sugar as vossas energias. O Protocolo Magnético ainda pode reverter isto e devolver o alvo para ti.",
     urgency: "🟢 1 Vaga de Urgência Liberada",
   },
-  com_outra_pessoa: {
+  mudanca_repentina: {
     title: "👁️ A MENTE DELE(A) FOI MANIPULADA POR TERCEIROS.",
-    message: "A pessoa que amas sofre de cegueira espiritual severa. Existe uma forte influência (inveja ou amarração) a puxar a energia para longe. O nosso Ritual de Bloqueio Subconsciente destrói essa ligação pirata e gera repulsa automática por qualquer rival.",
+    message: "A pessoa que amas sofre de cegueira espiritual severa. Existe uma forte influência (inveja ou amarração) a puxar a energia para longe. O nosso Ritual destrói essa ligação pirata e gera repulsa instantânea por rivais.",
     urgency: "🔴 AÇÃO IMEDIATA REQUERIDA (Risco de Perda Permanente)",
   },
-  sem_contacto: {
-    title: "✂️ O VOSSO FIO VERMELHO ESTÁ PRESTES A PARTIR.",
-    message: "O orgulho da outra pessoa está a ser alimentado por ataques espirituais silenciosos que vocês têm sofrido. Se não for feito um escudo de imediato, o bloqueio torna-se definitivo. A boa notícia: consigo criar um feitiço de saudade incontrolável agora mesmo.",
-    urgency: "🟡 ENERGIA EM DECLÍNIO. Agir em Máximo 24H",
-  },
-  relacao_desgastada: {
+  conflito_constante: {
     title: "🧛 VAMPIRISMO ENERGÉTICO EXTREMO DETETADO.",
-    message: "Existe pura magia de peso plantada no vosso caminho para anular a química e destruir a vontade de estarem juntos. Estão a ser sugados por espíritos obsessores invocados pela inveja. Preciso de blindar a relação HOJE para quebrar este ciclo.",
+    message: "Existe uma magia de peso plantada no vosso caminho para anular a química e destruir a vontade de estarem juntos. Estão a ser sugados por espíritos obsessores. Precisamos de blindar a relação HOJE para desatar esse nó.",
     urgency: "🟢 Protocolo de Contra-Ataque Energético Pronto",
   },
 };
@@ -127,34 +140,43 @@ const QuizQualificacao = () => {
     }, 1200);
   };
 
-  const result = resultMessages[answers[0]] || resultMessages.separacao_recente;
+  const result = resultMessages[answers[0]] || resultMessages.afastamento_espiritual;
 
   const buildWhatsAppURL = () => {
     const situacaoMap: Record<string, string> = {
-      separacao_recente: "Separação recente",
-      com_outra_pessoa: "O(a) ex está com outra pessoa",
-      sem_contacto: "Sem contacto há semanas/meses",
-      relacao_desgastada: "Relação desgastada",
+      afastamento_espiritual: "Bruxaria/Inveja ou Feitiço evidente",
+      mudanca_repentina: "Mudou da noite para o dia/Ficou Frio",
+      conflito_constante: "Brigas sem justificativa lógica",
     };
     const tempoMap: Record<string, string> = {
-      menos_1_semana: "menos de 1 semana",
-      "1_a_4_semanas": "1 a 4 semanas",
-      "1_a_6_meses": "1 a 6 meses",
-      mais_6_meses: "mais de 6 meses",
+      semanas: "Algumas semanas (Dano rápido)",
+      meses: "Meses de agonia contínua",
+      perda_total: "Perda de contacto/Assumiu rival",
     };
-    const tentativaMap: Record<string, string> = {
-      primeira_vez: "Primeira vez a procurar ajuda",
-      conversei: "Já tentei conversar",
-      outro_guia: "Já procurei outro guia",
-      varias_tentativas: "Várias tentativas sem resultado",
+    const sintomasMap: Record<string, string> = {
+      insonia: "Insônia pesada / Ansiedade",
+      dores: "Tristeza profunda / Dores estranhas",
+      obsessao: "Pensamentos super obsessivos",
+    };
+    const comportamentoMap: Record<string, string> = {
+      repulsa: "Ficou repulsivo(a) e frio de repente",
+      confusao: "Diz que está confuso(a) e se distanciou",
+      manipulacao: "Sinal nítido de manipulação de terceiros",
+    };
+    const desejoMap: Record<string, string> = {
+      verdade: "Desmascarar rival e gerar NOJO nele(a)",
+      bloqueio: "Destruir orgulho / Fazê-lo rastejar",
+      protecao: "Selamento e blindagem definitiva do nosso laço",
     };
 
     const msg = encodeURIComponent(
-      `Olá Guia Maria Helena! Fiz a análise no site e recebi um ALERTA de mensagem oculta sobre o meu resultado.\n\n` +
-      `📌 Situação: ${situacaoMap[answers[0]] || answers[0]}\n` +
-      `⏳ Tempo separados: ${tempoMap[answers[1]] || answers[1]}\n` +
-      `🔄 Tentativas: ${tentativaMap[answers[2]] || answers[2]}\n\n` +
-      `Pode revelar-me qual foi o padrão crítico encontrado, por favor?`
+      `Olá Guia Maria Helena! Recebi o meu *ALERTA DE ANÁLISE* no site com os meus dados e preciso de ajuda:\n\n` +
+      `📌 *Diagnóstico:* ${situacaoMap[answers[0]] || answers[0]}\n` +
+      `⏳ *Raiz do Tempo:* ${tempoMap[answers[1]] || answers[1]}\n` +
+      `💔 *Meus Sintomas Ocultos:* ${sintomasMap[answers[2]] || answers[2]}\n` +
+      `👤 *Mudança Comportamental:* ${comportamentoMap[answers[3]] || answers[3]}\n` +
+      `🔥 *Minha Única Exigência:* ${desejoMap[answers[4]] || answers[4]}\n\n` +
+      `🚨 *Por favor, revela-me qual foi a mensagem bloqueada e o que precisamos fazer de IMEDIATO para reverter esse feitiço!*`
     );
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
   };
@@ -281,7 +303,7 @@ const QuizQualificacao = () => {
           <button
             key={opt.value}
             onClick={() => handleSelect(opt.value)}
-            className={`flex items-center gap-3 w-full text-left px-4 py-3.5 rounded border transition-all duration-300 text-sm
+            className={`flex items-start md:items-center gap-3 w-full text-left px-4 py-3.5 rounded border transition-all duration-300 text-sm
               ${
                 selectedOption === opt.value
                   ? "border-red-600/80 bg-red-950/50 text-red-400 scale-[0.98] shadow-inner shadow-red-900/60"
@@ -289,8 +311,8 @@ const QuizQualificacao = () => {
               }
             `}
           >
-            <opt.icon className="w-5 h-5 flex-shrink-0" />
-            <span className="font-medium">{opt.label}</span>
+            <opt.icon className="w-5 h-5 flex-shrink-0 mt-0.5 md:mt-0" />
+            <span className="font-medium leading-snug">{opt.label}</span>
             {selectedOption === opt.value && (
               <span className="ml-auto text-red-500 font-bold animate-pulse text-lg">✓</span>
             )}
