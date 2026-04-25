@@ -12,7 +12,7 @@ const HeroSection = () => (
     </h1>
 
     <h2 className="text-[19px] font-normal text-muted-foreground italic max-w-[650px] mx-auto mb-6">
-      A culpa não é sua. Descubra a verdade em um <strong>Diagnóstico Espiritual Gratuito</strong>. Realizamos o <strong>Afastamento de Energias Rivais</strong> e um <strong>Desbloqueio Afetivo</strong> profundo para limpar o caminho.
+      A culpa não é tua. A mente de quem amas pode estar sob influência de inveja e bloqueios externos. Através do inédito <strong>Protocolo de Inversão Magnética</strong>, efetuamos a limpeza profunda e o restabelecimento da vossa matriz energética, abrindo caminhos para o regresso.
     </h2>
 
     {/* Ponto 6: Contador de resultados */}

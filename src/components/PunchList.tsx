@@ -2,14 +2,14 @@ import { Magnet, Scissors, ShieldCheck } from "lucide-react";
 
 const items = [
   {
-    title: "1. Descoberta e Investigação da Mentira",
+    title: "1. Leitura Esotérica e Rastreio Magnético",
     icon: Magnet,
-    text: "Muitos afastamentos escondem a manipulação de terceiros. A Vidência Rastreadora descobre rapidamente quem ou o que causou o bloqueio, trazendo a verdade oculta à luz.",
+    text: "A maioria dos afastamentos não acontece por acaso. Ao canalizarmos a nossa energia, mapeamos a matriz da ligação com quem amas, revelando rapidamente se houve interferência ou manipulação de terceiros.",
   },
   {
-    title: "2. Corte Absoluto de Terceiros e Inveja",
+    title: "2. Corte Absoluto de Energias Rivais",
     icon: Scissors,
-    text: "O trabalho cessa imediatamente qualquer ligação espiritual e física da pessoa amada com amantes e rivais. Cria um muro energético que impede qualquer interferência de destruir a vossa união.",
+    text: "O nosso protocolo anula imediatamente qualquer laço espiritual e físico da pessoa amada com invejosos e rivais. Cria um escudo energético impenetrável que impede interferências externas de destruírem a vossa união.",
   },
   {
     title: "3. Bloqueio Mental e Domínio Magnético",

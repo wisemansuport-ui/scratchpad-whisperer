@@ -6,7 +6,7 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_ME
 
 declare global {
   interface Window {
-    fbq: any;
+    fbq: (command: string, action: string, params?: Record<string, unknown>) => void;
   }
 }
 
